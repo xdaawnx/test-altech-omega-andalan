@@ -21,7 +21,7 @@ class AuthorControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_list_authors()
+    public function list_authors()
     {
         $response = $this->getJson('/api/authors');
         $response->assertStatus(200);
@@ -34,7 +34,7 @@ class AuthorControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_create_an_author()
+    public function create_an_author()
     {
         $data = [
             'name' => 'John Doe',
@@ -61,7 +61,7 @@ class AuthorControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_show_a_specific_author()
+    public function show_a_specific_author()
     {
         $response = $this->getJson("/api/authors/{$this->author->id}");
         $response->assertStatus(200);
@@ -81,7 +81,7 @@ class AuthorControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_update_an_author()
+    public function update_an_author()
     {
         $updatedData = [
             'name' => 'Jane Doe',
@@ -111,7 +111,7 @@ class AuthorControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_can_delete_an_author()
+    public function delete_an_author()
     {
         $response = $this->deleteJson("/api/authors/{$this->author->id}");
         $response->assertStatus(204);
