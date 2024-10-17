@@ -70,8 +70,8 @@ class BookService implements BookServiceInterface {
     }
 
     public function getBooksByAuthor($authorId) {
-        $author = $this->authorService->getAuthorById($authorId);
-        
+        $this->authorService->getAuthorById($authorId);
+
         return Cache::remember("author:{$authorId}", 300, function () {
             // Fetch from the repository if not cached
             return $this->bookRepo->getAllBooks();
