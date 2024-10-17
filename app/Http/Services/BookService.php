@@ -4,19 +4,20 @@ namespace App\Http\Services;
 use App\Http\Services\Interfaces\BookServiceInterface;
 use App\Http\Repositories\Interfaces\BookRepositoryInterface;
 use App\Http\Repositories\Interfaces\AuthorRepositoryInterface;
+use App\Http\Services\Interfaces\AuthorServiceInterface;
 use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class BookService implements BookServiceInterface {
     protected $bookRepo;
-    protected $authorRepo;
+    protected $authorService;
 
     public function __construct(
         BookRepositoryInterface $bookRepo, 
-        AuthorRepositoryInterface $authorRepo
+        AuthorServiceInterface $authorService
     ) {
         $this->bookRepo = $bookRepo;
-        $this->authorRepo = $authorRepo;
+        $this->authorService = $authorService;
     }
 
     public function getAllBooks() {
@@ -69,10 +70,8 @@ class BookService implements BookServiceInterface {
     }
 
     public function getBooksByAuthor($authorId) {
-        $author = $this->authorRepo->getAuthorById($authorId);
-        if (empty($author)) {
-            throw new NotFoundHttpException("not found");
-        }
+        $author = $this->authorService->getAuthorById($authorId);
+        
         return Cache::remember("author:{$authorId}", 300, function () {
             // Fetch from the repository if not cached
             return $this->bookRepo->getAllBooks();
