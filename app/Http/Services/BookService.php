@@ -43,11 +43,6 @@ class BookService implements BookServiceInterface {
     }
 
     public function updateBook($id, $data) {
-        try {
-            
-        } catch (\Throwable $th) {
-            //throw $th;
-        }
         $book = $this->getBookById($id);
         if (empty($book)) {
             throw new NotFoundHttpException("not found");
