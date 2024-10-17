@@ -38,10 +38,29 @@ Example:
 > DB_PASSWORD=your_database_password
 > 
 > CACHE_DRIVER=redis
+> 
+> REDIS_HOST=127.0.0.1
+>
+> REDIS_PASSWORD=null
+>
+> REDIS_PORT=6379
+>
+> REDIS_CLIENT=predis
+
+  
+### 3. Generate APP Key
 
   
 
-### 3. Install Dependencies
+Run the following command to generate APP key:
+
+  
+
+`php artisan key:generate`
+
+
+
+### 4. Install Dependencies
 
   
 
@@ -53,7 +72,7 @@ Run the following command to install the project dependencies:
 
   
 
-### 4. Run Migrations
+### 5. Run Migrations
 
   
 
@@ -65,7 +84,7 @@ Run the database migrations, use the following command:
 
   
 
-### 5. Run the Application
+### 6. Run the Application
 
   
 
@@ -77,7 +96,7 @@ Start the Laravel development server by running the following command:
 
   
 
-### 6. Access the API Documentation
+### 7. Access the API Documentation
 
   
 
@@ -89,7 +108,7 @@ Open your web browser and navigate to the following URL to access the API docume
 
   
 
-### 6. Testing
+### 8. Testing
 
 To run the tests, use the following command:
 
