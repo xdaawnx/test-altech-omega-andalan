@@ -1,0 +1,26 @@
+Warning: TTY mode is not supported on Windows platform.
+
+  [30;42;1m PASS [39;49;22m[39m Tests\Feature\AuthorControllerTest[39m
+  [32;1m✓[39;22m[39m [2mlist authors[22m[39m
+  [32;1m✓[39;22m[39m [2mcreate an author[22m[39m
+  [32;1m✓[39;22m[39m [2mshow a specific author[22m[39m
+  [32;1m✓[39;22m[39m [2mupdate an author[22m[39m
+  [32;1m✓[39;22m[39m [2mdelete an author[22m[39m
+
+  [30;42;1m PASS [39;49;22m[39m Tests\Feature\BookControllerTest[39m
+  [32;1m✓[39;22m[39m [2mlist books[22m[39m
+  [32;1m✓[39;22m[39m [2mcreate a book[22m[39m
+  [32;1m✓[39;22m[39m [2mshow a specific book[22m[39m
+  [32;1m✓[39;22m[39m [2mupdate a book[22m[39m
+  [32;1m✓[39;22m[39m [2mdelete a book[22m[39m
+  [32;1m✓[39;22m[39m [2mget books by author[22m[39m
+
+  [30;42;1m PASS [39;49;22m[39m Tests\Unit\ExampleTest[39m
+  [32;1m✓[39;22m[39m [2mexample[22m[39m
+
+  [30;42;1m PASS [39;49;22m[39m Tests\Feature\ExampleTest[39m
+  [32;1m✓[39;22m[39m [2mexample[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m13 passed[39;22m
+  [37;1mTime:   [39;22m[39m0.70s[39m
+
